@@ -1,0 +1,1503 @@
+-- All Credits to the Original Developer of TH Hub // UnRealCC & TheNcore
+-- This is TH Hub V2 UnObfuscated After 3 years
+-- and also yeah we have stopped updating the script  and retired Hope you make a better remake of this Legendary Script that Terrorized DBR Some Of The Features are patch the reason is because this script is 3 years old and since we retired no one updated it!
+
+-- // UnRealCC // --
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wally2", true))()
+local w = library:CreateWindow('TH Hub')
+
+w:Section('Survivor')
+
+local b1 = w:Button('Insta - Heal', function()
+   local player = game.Players.LocalPlayer
+   local healthState = player.Backpack.Scripts.values.HealthState
+   local properties = {C21 = healthState, C20 = 2, C22 = "I101"}
+   local ohTable1 = {
+       D9v8 = properties,
+       Bbh1O = properties,
+       Dvh1O = properties,
+       Dbh1O = properties,
+       Dhv8 = properties
+   }
+   game:GetService("ReplicatedStorage").RemoteEvents.NewPropertie:FireServer(ohTable1)
+end)
+
+local b2 = w:Button('Insta - Down', function()
+   local players = game:GetService("Players"):GetPlayers()
+   for i,v in pairs(players) do
+       for i=0,3 do
+           wait(1)
+           game:GetService("ReplicatedStorage").RemoteEvents.Swing:FireServer(workspace[v.Name].Head)
+       end
+   end
+end)
+
+local b3 = w:Button('Insta - Heal Others', function()
+   local player = game.Players.LocalPlayer
+   local healthState = player.Backpack.Scripts.values.HealthState
+   local properties = {C21 = healthState, C20 = 2, C22 = "I101"}
+   local ohTable1 = {
+       D9v8 = properties,
+       Bbh1O = properties,
+       Dvh1O = properties,
+       Dbh1O = properties,
+       Dhv8 = properties
+   }
+   game:GetService("ReplicatedStorage").RemoteEvents.NewPropertie:FireServer(ohTable1)
+end)
+
+local b4 = w:Button('Insta - Hook', function()
+   local localPlayer = game:GetService("Players").LocalPlayer
+   local ohTable1 = {
+       ["D9v8"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = true, ["C22"] = "B101"},
+       ["Bbh1O"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = true, ["C22"] = "B101"},
+       ["Dvh1O"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = true, ["C22"] = "B101"},
+       ["Dbh1O"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = true, ["C22"] = "B101"},
+       ["Dhv8"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = true, ["C22"] = "B101"}
+   }
+   game:GetService("ReplicatedStorage").RemoteEvents.NewPropertie:FireServer(ohTable1)
+end)
+
+local b5 = w:Button('Insta - unHook', function()
+   local localPlayer = game:GetService("Players").LocalPlayer
+   local ohTable1 = {
+       ["D9v8"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = false, ["C22"] = "B101"},
+       ["Bbh1O"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = false, ["C22"] = "B101"},
+       ["Dvh1O"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = false, ["C22"] = "B101"},
+       ["Dbh1O"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = false, ["C22"] = "B101"},
+       ["Dhv8"] = {["C21"] = localPlayer.Backpack.Scripts.values.Hooked, ["C20"] = false, ["C22"] = "B101"}
+   }
+   game:GetService("ReplicatedStorage").RemoteEvents.NewPropertie:FireServer(ohTable1)
+end)
+
+local b6 = w:Button('Insta - Hit Others', function()
+   local players = game:GetService("Players"):GetPlayers()
+   for _, player in ipairs(players) do
+       for i = 0, 3 do
+           wait()
+           game:GetService("ReplicatedStorage").RemoteEvents.Swing:FireServer(workspace[player.Name].Head)
+       end
+   end
+end)
+
+local b7 = w:Button('Survivor - Boost', function()
+   if not isRunning then
+        isRunning = true
+
+        repeat
+            wait()
+        until game:IsLoaded()
+        local L_134_ = game:service('Players')
+        local L_135_ = L_134_.LocalPlayer
+        repeat
+            wait()
+        until L_135_.Character
+        local L_136_ = game:service('RunService')
+        getgenv().Multiplier = 0.2
+
+        L_136_.Stepped:Connect(function()
+            if isRunning then
+                L_135_.Character.HumanoidRootPart.CFrame = L_135_.Character.HumanoidRootPart.CFrame + L_135_.Character.Humanoid.MoveDirection * Multiplier
+            end
+        end)
+    else
+        isRunning = false
+    end
+end)
+
+local settingsWindow = library:CreateWindow('TH Hub')
+settingsWindow:Section('Killer')
+
+local b8 = settingsWindow:Button('Insta - Hit All', function()
+   local players = game:GetService("Players")
+
+for i, player in pairs(players:GetPlayers()) do
+    for i = 0, 3 do
+        wait()
+        game:GetService("ReplicatedStorage").RemoteEvents.Swing:FireServer(workspace[player.Name].Head)
+    end
+end
+end)
+
+local b9 = settingsWindow:Button('Killer - Boost', function()
+   if not isRunning then
+        isRunning = true
+
+        repeat
+            wait()
+        until game:IsLoaded()
+        local L_134_ = game:service('Players')
+        local L_135_ = L_134_.LocalPlayer
+        repeat
+            wait()
+        until L_135_.Character
+        local L_136_ = game:service('RunService')
+        getgenv().Multiplier = 0.3
+
+        L_136_.Stepped:Connect(function()
+            if isRunning then
+                L_135_.Character.HumanoidRootPart.CFrame = L_135_.Character.HumanoidRootPart.CFrame + L_135_.Character.Humanoid.MoveDirection * Multiplier
+            end
+        end)
+    else
+        isRunning = false
+    end
+end)
+
+local b10 = settingsWindow:Button('Insta - Hook All', function()
+   local players = game:GetService("Players"):GetPlayers()
+
+    for _, player in ipairs(players) do
+        local hookedValue = player.Backpack.Scripts.values.Hooked
+        local ohTable1 = {
+            ["D9v8"] = {["C21"] = hookedValue, ["C20"] = true, ["C22"] = "B101"},
+            ["Bbh1O"] = {["C21"] = hookedValue, ["C20"] = true, ["C22"] = "B101"},
+            ["Dvh1O"] = {["C21"] = hookedValue, ["C20"] = true, ["C22"] = "B101"},
+            ["Dbh1O"] = {["C21"] = hookedValue, ["C20"] = true, ["C22"] = "B101"},
+            ["Dhv8"] = {["C21"] = hookedValue, ["C20"] = true, ["C22"] = "B101"}
+        }
+
+        game:GetService("ReplicatedStorage").RemoteEvents.NewPropertie:FireServer(ohTable1)
+    end
+end)
+
+local b11 = settingsWindow:Button('Insta - unHook All', function()
+   local players = game:GetService("Players"):GetPlayers()
+
+    for _, player in ipairs(players) do
+        local hookedValue = player.Backpack.Scripts.values.Hooked
+        local ohTable1 = {
+            ["D9v8"] = {["C21"] = hookedValue, ["C20"] = false, ["C22"] = "B101"},
+            ["Bbh1O"] = {["C21"] = hookedValue, ["C20"] = false, ["C22"] = "B101"},
+            ["Dvh1O"] = {["C21"] = hookedValue, ["C20"] = false, ["C22"] = "B101"},
+            ["Dbh1O"] = {["C21"] = hookedValue, ["C20"] = false, ["C22"] = "B101"},
+            ["Dhv8"] = {["C21"] = hookedValue, ["C20"] = false, ["C22"] = "B101"}
+        }
+
+        game:GetService("ReplicatedStorage").RemoteEvents.NewPropertie:FireServer(ohTable1)
+    end
+end)
+
+local miscWindow = library:CreateWindow('TH Hub')
+miscWindow:Section('Easy Escape')
+
+local b12 = miscWindow:Button('Insta - Gens', function()
+   game:GetService("Workspace").MatchValues.GeneratorsRepaired.Value = 5
+end)
+
+local b13 = miscWindow:Button('Repair All Gens', function()
+   while true do
+    for i, v in pairs(workspace:GetChildren()) do
+        if string.find(v.Name, "Generator") then
+            local args = {
+                [1] = "Great",
+                [2] = v.Name
+            }
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Mass.CFrame
+            for i = 1, 50 do
+                wait()
+                game:GetService("ReplicatedStorage").RemoteEvents.SendSkillCheck:FireServer(unpack(args))
+            end
+        end
+    end
+    wait(1)
+end
+end)
+
+local b14 = miscWindow:Button('Open Exit 1', function()
+   local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("ExitGate1"):WaitForChild("Using"),
+            ["C20"] = "Qqtiib",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+end)
+
+local b15 = miscWindow:Button('Open Exit 2', function()
+   local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("ExitGate2"):WaitForChild("Using"),
+            ["C20"] = "Qqtiib",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+end)
+
+local b16 = miscWindow:Button('EscapeEZ', function()
+end)
+
+local b17 = miscWindow:Button('TP Hatch', function()
+   local player = game.Players.LocalPlayer
+   local character = player.Character or player.CharacterAdded:Wait()
+   local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+   local targetLocation = game.Workspace.Hatch.HumanoidRootPart.Position
+   humanoidRootPart.CFrame = CFrame.new(targetLocation)
+end)
+
+local b18 = miscWindow:Button('TP Purple Key', function()
+   local player = game:GetService("Players").LocalPlayer
+   local purpleKeyLocation = game:GetService("Workspace").PurpleKey.Handle.Position
+   player.Character.HumanoidRootPart.CFrame = CFrame.new(purpleKeyLocation)
+   local camera = game:GetService("Workspace").CurrentCamera
+   camera.CameraType = Enum.CameraType.Custom
+end)
+
+local ccWindow = library:CreateWindow('TH Hub')
+ccWindow:Section('Stuff')
+
+local b19 = ccWindow:Button('Collect BloodPoints', function()
+   local actions = {
+        {
+            category = "Boldness",
+            amount = 150000,
+            action = "CLEANSING"
+        },
+        {
+            category = "Boldness",
+            amount = 150000,
+            action = "CHEST SEARCHED"
+        },
+        {
+            category = "Altruism",
+            amount = 150000,
+            action = "HOOK RESCUE"
+        },
+        {
+            category = "Survival",
+            amount = 150000,
+            action = "HATCH ESCAPE"
+        }
+    }
+    
+    local remoteEvent = game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Info_Pass")
+    
+    for _, action in ipairs(actions) do
+        local args = {
+            [1] = action.category,
+            [2] = action.amount,
+            [3] = action.action
+        }
+        
+        remoteEvent:FireServer(unpack(args))
+    end
+end)
+
+local b20 = ccWindow:Button('Disable All Hooks', function()
+   local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook1"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook2"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook3"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook4"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook5"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook6"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook7"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook8"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook9"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook10"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook11"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook12"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook13"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook13"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook14"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook15"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook16"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook17"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook18"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook19"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook20"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook21"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook22"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook23"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook24"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook25"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook26"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook27"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook28"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook29"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Hook30"):WaitForChild("Panel"):WaitForChild("Sabotaging"),
+            ["C20"] = game:GetService("Players").LocalPlayer,
+            ["C22"] = "O101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+end)
+
+local b21 = ccWindow:Button('Drop All Pallets', function()
+   local args = {
+    [1] = workspace:WaitForChild("Pallet1"),
+    [2] = workspace:WaitForChild("Pallet1"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet2"),
+    [2] = workspace:WaitForChild("Pallet2"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet3"),
+    [2] = workspace:WaitForChild("Pallet3"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet4"),
+    [2] = workspace:WaitForChild("Pallet4"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet5"),
+    [2] = workspace:WaitForChild("Pallet5"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet6"),
+    [2] = workspace:WaitForChild("Pallet6"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet7"),
+    [2] = workspace:WaitForChild("Pallet7"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet8"),
+    [2] = workspace:WaitForChild("Pallet8"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet9"),
+    [2] = workspace:WaitForChild("Pallet9"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet10"),
+    [2] = workspace:WaitForChild("Pallet10"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet11"),
+    [2] = workspace:WaitForChild("Pallet11"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet12"),
+    [2] = workspace:WaitForChild("Pallet12"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet13"),
+    [2] = workspace:WaitForChild("Pallet13"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet14"),
+    [2] = workspace:WaitForChild("Pallet14"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet15"),
+    [2] = workspace:WaitForChild("Pallet15"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet16"),
+    [2] = workspace:WaitForChild("Pallet16"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet17"),
+    [2] = workspace:WaitForChild("Pallet17"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+
+local args = {
+    [1] = workspace:WaitForChild("Pallet18"),
+    [2] = workspace:WaitForChild("Pallet18"):WaitForChild("FirstPort"),
+    [3] = "Drop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("PalletAction"):FireServer(unpack(args))
+end)
+
+local b22 = ccWindow:Button('Clean All Totems', function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/f3DLhHz3"))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/PTFJbirX"))()
+end)
+
+local b23 = ccWindow:Button('Open All Chests', function()
+   local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest1"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest2"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest3"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest4"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest5"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest6"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest7"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest8"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest9"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest10"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest11"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest12"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest13"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest14"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["D9v8"] = {
+            ["C21"] = workspace:WaitForChild("Chest15"):WaitForChild("Panel"):WaitForChild("Using"),
+            ["C20"] = "IIOOOWQ",
+            ["C22"] = "S101"
+        },
+        ["Bbh1O"] = {} --[[DUPLICATE]],
+        ["Dvh1O"] = {} --[[DUPLICATE]],
+        ["Dbh1O"] = {} --[[DUPLICATE]],
+        ["Dhv8"] = {} --[[DUPLICATE]]
+    }
+}
+
+args[1].Bbh1O = args[1].D9v8
+args[1].Dvh1O = args[1].D9v8
+args[1].Dbh1O = args[1].D9v8
+args[1].Dhv8 = args[1].D9v8
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("NewPropertie"):FireServer(unpack(args))
+end)
+
+local b24 = ccWindow:Button('Killer Survivor ESP', function()
+   local function createBox(part, size, color)
+    local box = Instance.new("BoxHandleAdornment")
+    box.Size = size
+    box.Adornee = part
+    box.AlwaysOnTop = true
+    box.ZIndex = 5
+    box.Transparency = 0.7
+    box.Color3 = color
+    box.Parent = part
+end
+
+local function createBoxWithInfoAbovePlayerName(part, size, color, name, distance)
+    local billboardGui = Instance.new("BillboardGui")
+    billboardGui.Size = UDim2.new(0, 100, 0, 30)
+    billboardGui.StudsOffset = Vector3.new(0, 2, 0)
+    billboardGui.AlwaysOnTop = true
+    billboardGui.LightInfluence = 1
+    billboardGui.ExtentsOffsetWorldSpace = Vector3.new(0, 0.5, 0)
+    billboardGui.Parent = part
+
+    local textBox = Instance.new("TextBox")
+    textBox.Size = UDim2.new(1, 0, 1, 0)
+    textBox.BackgroundTransparency = 1
+    textBox.Text = name .. "\nDistance: " .. math.floor(distance) .. " studs"
+    textBox.TextColor3 = color
+    textBox.TextSize = 15
+    textBox.Font = Enum.Font.SourceSansBold
+    textBox.TextStrokeTransparency = 0.5
+    textBox.TextStrokeColor3 = Color3.new(0, 0, 0)
+    textBox.TextXAlignment = Enum.TextXAlignment.Left
+    textBox.TextYAlignment = Enum.TextYAlignment.Top
+    textBox.TextWrapped = true
+    textBox.Parent = billboardGui
+end
+
+local player = game:GetService("Players").LocalPlayer
+
+if player and player.Character then
+    
+    local killer = nil
+    for _, p in ipairs(game:GetService("Players"):GetPlayers()) do
+        if p.Character and p.Team ~= player.Team then
+            killer = p
+            break
+        end
+    end
+    
+    local survivors = {}
+    for _, p in ipairs(game:GetService("Players"):GetPlayers()) do
+        if p.Character and p.Team == player.Team and p ~= player then
+            table.insert(survivors, p)
+        end
+    end
+    
+    for _, survivor in ipairs(survivors) do
+        local character = survivor.Character
+        if character then
+            local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+            if humanoidRootPart then
+                local distance = (humanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+                createBox(humanoidRootPart, Vector3.new(4, 7, 4), Color3.new(0, 1, 0))
+                createBoxWithInfoAbovePlayerName(character.Head, Vector3.new(0, 0, 0), Color3.new(1, 1, 1), survivor.Name, distance)
+            end
+        end
+    end
+    
+    if killer and killer.Character then
+        local character = killer.Character
+        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+        if humanoidRootPart then
+            local distance = (humanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+            createBox(humanoidRootPart, Vector3.new(4, 7, 4), Color3.new(1, 0, 0))
+            createBoxWithInfoAbovePlayerName(character.Head, Vector3.new(0, 0, 0), Color3.new(1, 0, 0), killer.Name, distance)
+        end
+    end
+end
+end)
+
+local b25 = ccWindow:Button('Explode All Gens', function()
+   while true do 
+    local function createOhTable(generatorPanel)
+        return {
+            ["D9v8"] = {["C21"] = generatorPanel.Exploded, ["C20"] = true, ["C22"] = "B101"},
+            ["Bbh1O"] = {["C21"] = generatorPanel.Exploded, ["C20"] = true, ["C22"] = "B101"},
+            ["Dvh1O"] = {["C21"] = generatorPanel.Exploded, ["C20"] = true, ["C22"] = "B101"},
+            ["Dbh1O"] = {["C21"] = generatorPanel.Exploded, ["C20"] = true, ["C22"] = "B101"},
+            ["Dhv8"] = {["C21"] = generatorPanel.Exploded, ["C20"] = true, ["C22"] = "B101"}
+        }
+    end
+    
+    local remoteEvent = game:GetService("ReplicatedStorage").RemoteEvents.NewPropertie
+    
+    for i = 1, 7 do
+        local generatorName = "Generator" .. i
+        local generator = workspace[generatorName]
+        if generator then
+            local ohTable = createOhTable(generator.Panel)
+            remoteEvent:FireServer(ohTable)
+        end
+    end
+    
+    wait()
+end
+end)
+
+local b26 = ccWindow:Button('Wraith Sound', function()
+   local spamSoundActive = true
+local ohNumber1 = 2
+
+local function playSpamSound()
+    while spamSoundActive do
+        game:GetService("ReplicatedStorage").RemoteEvents.StalkerPowerAction:FireServer(ohNumber1)
+        wait(0)
+    end
+end
+
+playSpamSound()
+end)
